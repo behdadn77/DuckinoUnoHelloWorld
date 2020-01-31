@@ -1,0 +1,161 @@
+2:39
+
+
+
+
+
+how to make usb rubber ducky from arduino uno
+5.8K views
+
+hkdwrld
+Up next
+Autoplay
+
+
+12:32
+How to make your own USB Rubber Ducky (Arduino)
+JackkTutorials
+90K views
+
+5:01
+Arduino vs. Raspberry Pi - Which is best? | AddOhms #7
+AddOhms
+1M views
+
+8:31
+PC Backdoor With Pi Zero | P4wnP1 Tutorial
+Seytonic
+Recommended for you
+
+2:22
+$1 BadUSB?! Review
+Seytonic
+74K views
+
+5:01
+Collin's Lab: USB Hacking with Arduino
+Make:
+574K views
+
+5:39
+How to make your own USB Rubber Ducky
+Override
+69K views
+
+16:39
+$1 Bad USB | Send Keystrokes | HID Prank Device
+Mark Kingston
+8.8K views
+
+7:45
+Learn to Hack || Learn Quick
+Mike Boyd
+Recommended for you
+
+13:33
+How to make a high current 200A spot welding machine using 3000F Capacitor
+American Tech
+Recommended for you
+
+5:15
+homemade diy arduino micro usb rubber ducky-for learning
+Tecmuma
+22K views
+
+4:32
+How to Make a Radar with Arduino | Arduino Project | Indian LifeHacker
+Indian LifeHacker
+257K views
+
+4:59
+What is Arduino? Arduino Projects? Arduino Vs Raspberry Pi?
+Technical Guruji
+1M views
+
+Comments • 15
+
+Add a public comment...
+
+Magnificent xD
+after doing this can i use it as a rubber ducky on windows ?
+
+7 months ago
+1
+
+
+WHY SO SERIOUS!!!
+Hey after this flashing process will my arduino work same for all other things can i undo the flash
+
+11 months ago
+2
+
+
+Techno Tips
+It works 🤘
+
+7 months ago
+1
+
+
+Manchas 73
+can u uplade the code of the hello world?
+
+1 year ago
+2
+
+
+hkdwrld
+#include <HIDKeyboard.h>
+
+HIDKeyboard keyboard; // Initialize HIDKeyboard object
+
+void setup() {
+  keyboard.begin(); // Start communication
+  delay(2000); // Wait for device to be found 
+}
+
+void loop() {
+  
+  // Send first Hello World using the println() function
+  keyboard.println("Hello World!");
+  
+  // Send second Hello World using unique keypresses
+  keyboard.pressKey('H');
+  keyboard.releaseKey();
+  keyboard.pressKey('e');
+  keyboard.releaseKey();
+  keyboard.pressKey('l');
+  keyboard.releaseKey();
+  keyboard.pressKey('l');
+  keyboard.releaseKey();
+  keyboard.pressKey('o');
+  keyboard.releaseKey();
+  keyboard.pressKey(' ');
+  keyboard.releaseKey();
+  keyboard.pressKey('W');
+  keyboard.releaseKey();
+  keyboard.pressKey('o');
+  keyboard.releaseKey();
+  keyboard.pressKey('r');
+  keyboard.releaseKey();
+  keyboard.pressKey('l');
+  keyboard.releaseKey();
+  keyboard.pressKey('d');
+  keyboard.releaseKey();
+  keyboard.pressKey('!');
+  keyboard.releaseKey();
+  keyboard.pressSpecialKey(ENTER);
+  keyboard.releaseKey();
+  
+  // Send third Hello World using print() and key modifiers. 
+  keyboard.pressKey(SHIFT, 'h'); // Holds Shift and presses 'h'
+  keyboard.releaseKey();
+  keyboard.print("ello ");
+  keyboard.pressKey(SHIFT, 'w'); // Holds Shift and presses 'w'
+  keyboard.releaseKey();
+  keyboard.print("orld");
+  keyboard.pressKey(SHIFT, '1'); // Holds Shift and presses '1'
+  keyboard.releaseKey();
+  
+  while(1);
+}
